@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,13 +20,16 @@ public class IfOnlyStockController {
     IfOnlyStockRepository ifOnlyStockRepository;
 
 //    INDEX
-    @GetMapping(value = "/stocks")
-    public ResponseEntity<List<IfOnlyStock>> getAllStocks() {
+    @GetMapping(value = "/ifonlystocks")
+    public ResponseEntity<List<IfOnlyStock>> getAllIfOnlyStocks() {
         return new ResponseEntity<>(ifOnlyStockRepository.findAll(), HttpStatus.OK);
     }
 
 //    SHOW
-    
 
+    @GetMapping(value = "/ifonlystocks/{id}")
+    public ResponseEntity getIfOnlyStock(@PathVariable Long id) {
+        return new ResponseEntity<>(ifOnlyStockRepository.findById(id), HttpStatus.OK);
+    }
 
 }
