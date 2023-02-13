@@ -46,8 +46,10 @@ public class IfOnlyStockController {
         ifOnlyStockToUpdate.setCompanyName(ifOnlyStock.getCompanyName());
         ifOnlyStockToUpdate.setMaxPrice(ifOnlyStock.getMaxPrice());
         ifOnlyStockToUpdate.setMinPrice(ifOnlyStock.getMinPrice());
+        ifOnlyStockToUpdate.setCurrentPrice(ifOnlyStock.getCurrentPrice());
         ifOnlyStockToUpdate.setMaxPriceDate(ifOnlyStock.getMaxPriceDate());
         ifOnlyStockToUpdate.setMinPriceDate(ifOnlyStock.getMinPriceDate());
+        ifOnlyStockToUpdate.setCurrentPriceDate(ifOnlyStock.getCurrentPriceDate());
         ifOnlyStockToUpdate.setCurrency(ifOnlyStock.getCurrency());
         ifOnlyStockToUpdate.setCountry(ifOnlyStock.getCountry());
         ifOnlyStockToUpdate.setIndustryType(ifOnlyStock.getIndustryType());

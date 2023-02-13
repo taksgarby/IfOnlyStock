@@ -16,8 +16,9 @@ public class IfOnlyStockTest {
 
     @Before
     public void before(){
-        ifOnlyStock = new IfOnlyStock("Apple", 3.56, 1.05, LocalDate.of(2023, 1, 20),
-                LocalDate.of(2008, 6, 15), "USD", Country.USA, IndustryType.TECHNOLOGY);
+        ifOnlyStock = new IfOnlyStock("Apple", 3.56, 1.05, 2.50, LocalDate.of(2023, 1, 20),
+                LocalDate.of(2008, 6, 15), LocalDate.of(2023, 2, 13),
+                "USD", Country.USA, IndustryType.TECHNOLOGY);
     }
 
     @Test
