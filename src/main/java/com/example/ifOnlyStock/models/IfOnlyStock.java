@@ -13,7 +13,7 @@ public class IfOnlyStock {
     private Long id;
 
     @Column(name= "companyName")
-    private String name;
+    private String companyName;
 
     @Column(name = "maxPrice")
     private double maxPrice;
@@ -34,10 +34,10 @@ public class IfOnlyStock {
 
     IndustryType industryType;
 
-    public IfOnlyStock(String name, double maxPrice, double minPrice, LocalDate maxPriceDate,
+    public IfOnlyStock(String companyName, double maxPrice, double minPrice, LocalDate maxPriceDate,
                        LocalDate minPriceDate, String currency, Country country,
                        IndustryType industryType) {
-                this.name = name;
+                this.companyName = companyName;
                 this.maxPrice = maxPrice;
                 this.minPrice = minPrice;
                 this.maxPriceDate = maxPriceDate;
@@ -57,12 +57,12 @@ public class IfOnlyStock {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public double getMaxPrice() {
