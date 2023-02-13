@@ -45,6 +45,18 @@ public class DataLoader implements ApplicationRunner
                 "GBP", Country.UK, IndustryType.RETAIL);
         ifOnlyStockRepository.save(unilever);
 
+        IfOnlyStock meta = new IfOnlyStock
+                ("Meta", 376.26, 124.95, 174.15, LocalDate.of(2021, 9, 3),
+                        LocalDate.of(2018, 12, 21), LocalDate.of(2023, 2, 13),
+                        "USD", Country.USA, IndustryType.TECHNOLOGY);
+        ifOnlyStockRepository.save(meta);
+
+        IfOnlyStock morganStanley = new IfOnlyStock
+                ("Morgan Stanley", 104.87, 30.32, 98.12, LocalDate.of(2022, 2, 11),
+                        LocalDate.of(2020, 3, 20), LocalDate.of(2023, 2, 13),
+                        "USD", Country.USA, IndustryType.FINANCE);
+        ifOnlyStockRepository.save(morganStanley);
+
 
     }
 
