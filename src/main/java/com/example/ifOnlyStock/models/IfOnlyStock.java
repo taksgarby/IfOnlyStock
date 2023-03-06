@@ -1,12 +1,17 @@
 package com.example.ifOnlyStock.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ifOnlyStock")
 public class IfOnlyStock {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +41,18 @@ public class IfOnlyStock {
     @Column(name = "currency")
     private String currency;
 
+//    @ManyToMany
+//    @JsonIgnoreProperties({"fxRate"})
+//    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+//    @JoinTable(
+//            name = "ifOnlyStock_fxRate",
+//            joinColumns = {@JoinColumn(name = "ifOnlyStock_id", nullable = false, updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(name = "fxRate_id", nullable = false, updatable = false)}
+//    )
+//    private List<FxRate> fxRate;
+
+
+
     Country country;
 
     IndustryType industryType;
@@ -53,6 +70,7 @@ public class IfOnlyStock {
                 this.currency = currency;
                 this.country = country;
                 this.industryType = industryType;
+//                this.fxRate = new ArrayList<FxRate>();
     }
 
     public IfOnlyStock() {}
@@ -143,4 +161,12 @@ public class IfOnlyStock {
     public void setIndustryType(IndustryType industryType) {
         this.industryType = industryType;
     }
+
+//    public List<FxRate> getFxRate() {
+//        return fxRate;
+//    }
+//
+//    public void setFxRate(List<FxRate> fxRate) {
+//        this.fxRate = fxRate;
+//    }
 }

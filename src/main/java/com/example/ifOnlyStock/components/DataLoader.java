@@ -1,14 +1,17 @@
 package com.example.ifOnlyStock.components;
 
 import com.example.ifOnlyStock.models.Country;
+import com.example.ifOnlyStock.models.FxRate;
 import com.example.ifOnlyStock.models.IfOnlyStock;
 import com.example.ifOnlyStock.models.IndustryType;
+import com.example.ifOnlyStock.repositories.FxRateRepository;
 import com.example.ifOnlyStock.repositories.IfOnlyStockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Component
@@ -17,6 +20,9 @@ public class DataLoader implements ApplicationRunner
 
     @Autowired
     IfOnlyStockRepository ifOnlyStockRepository;
+
+    @Autowired
+    FxRateRepository fxRateRepository;
 
     public DataLoader() {}
 
@@ -57,7 +63,23 @@ public class DataLoader implements ApplicationRunner
                         "USD", Country.USA, IndustryType.FINANCE);
         ifOnlyStockRepository.save(morganStanley);
 
+        FxRate GBPtoUSD = new FxRate("GBP-USD", "GBP", "USD", new BigDecimal("1.20"));
+        fxRateRepository.save(GBPtoUSD);
 
+        FxRate USDtoGBP = new FxRate("USD-GBP", "USD", "GBP", new BigDecimal("0.83"));
+        fxRateRepository.save(USDtoGBP);
+
+        FxRate GBPtoJPY = new FxRate("GBP-JPY", "GBP", "JPY", new BigDecimal("163.40"));
+        fxRateRepository.save(GBPtoJPY);
+
+        FxRate JPYtoGBP = new FxRate("JPY-GBP", "JPY", "GBP", new BigDecimal("0.0061"));
+        fxRateRepository.save(JPYtoGBP);
+
+        FxRate USDtoJPY = new FxRate("USD-JPY", "USD", "JPY", new BigDecimal("136.04"));
+        fxRateRepository.save(USDtoJPY);
+
+        FxRate JPYtoUSD = new FxRate("JPY-USD", "JPY", "USD", new BigDecimal("0.0073"));
+        fxRateRepository.save(JPYtoUSD);
     }
 
 
