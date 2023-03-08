@@ -25,7 +25,7 @@ public class FxRate {
     @Column(name="toCurrency")
     private String toCurrency;
 
-    @Column(name="rate")
+    @Column(name="rate", precision=10, scale=5)
     private BigDecimal rate;
 
 
@@ -81,7 +81,7 @@ public class FxRate {
 
     public BigDecimal convertAmount(BigDecimal amount) {
 
-        return getRate().multiply(amount).setScale(2, RoundingMode.HALF_DOWN);
+        return getRate().multiply(amount).setScale(4, RoundingMode.HALF_DOWN);
     }
 
 

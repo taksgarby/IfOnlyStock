@@ -14,7 +14,7 @@ public class FxRateTest {
 
     @Before
     public void before() {
-        fxRate = new FxRate("USD-GBP", "USD", "GBP", new BigDecimal("0.82"));
+        fxRate = new FxRate("USD-GBP", "USD", "GBP", new BigDecimal("0.8234"));
     }
 
     @Test
@@ -34,12 +34,12 @@ public class FxRateTest {
 
     @Test
     public void hasRate() {
-        assertEquals(new BigDecimal("0.82"), fxRate.getRate());
+        assertEquals(new BigDecimal("0.8234"), fxRate.getRate());
     }
 
     @Test
     public void convertAmount() {
-        assertEquals(new BigDecimal("8.20"), fxRate.convertAmount(new BigDecimal(10)));
+        assertEquals(new BigDecimal("8.2340"), fxRate.convertAmount(new BigDecimal(10)));
     }
 
 

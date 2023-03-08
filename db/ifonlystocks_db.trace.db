@@ -1,0 +1,3 @@
+2023-03-06 14:27:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "RATE NUMERIC(4, 4)": "1.2000 (5)"; SQL statement:
+insert into fx_rate (id, from_currency, name, rate, to_currency) values (default, ?, ?, ?, ?) [22001-214]
